@@ -1,0 +1,10 @@
+{
+  "name": "ph3-student-api-template",
+  "private": true,
+  "workspaces": ["backend", "client"],
+  "scripts": {
+    "server": "npm run dev --workspace backend",
+    "client": "npm run dev --workspace client",
+    "build": "npm run build --workspace client"
+  }
+}

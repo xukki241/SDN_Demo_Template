@@ -1,0 +1,16 @@
+{
+  "name": "student-template-client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": { "dev": "vite --host localhost", "build": "vite build" },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.1.0"
+  }
+}

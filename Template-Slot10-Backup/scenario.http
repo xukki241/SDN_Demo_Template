@@ -1,0 +1,49 @@
+@baseUrl = http://localhost:3007/api
+@id = thay-bang-_id-nhan-duoc-tu-response
+
+### 1. Lấy danh sách
+GET {{baseUrl}}/students
+
+### 2. Xem một sinh viên (thay @id bằng _id thật)
+GET {{baseUrl}}/students/{{id}}
+
+### 3. Tạo sinh viên
+POST {{baseUrl}}/students
+Content-Type: application/json
+
+{
+  "name": "An",
+  "mark": 8
+}
+
+### 4. Gửi thiếu dữ liệu -> 400
+POST {{baseUrl}}/students
+Content-Type: application/json
+
+{}
+
+### 5. ID sai định dạng -> 400
+GET {{baseUrl}}/students/sai-id
+
+### 6. ID hợp lệ nhưng không tồn tại -> 404
+GET {{baseUrl}}/students/64b000000000000000000099
+
+### 7. PATCH: sửa một phần (tùy chọn)
+PATCH {{baseUrl}}/students/{{id}}
+Content-Type: application/json
+
+{
+  "mark": 9
+}
+
+### 8. PUT: thay đầy đủ thông tin (tùy chọn)
+PUT {{baseUrl}}/students/{{id}}
+Content-Type: application/json
+
+{
+  "name": "An mới",
+  "mark": 9
+}
+
+### 9. DELETE: xóa (tùy chọn, chạy cuối cùng)
+DELETE {{baseUrl}}/students/{{id}}
